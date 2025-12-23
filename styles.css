@@ -1,0 +1,63 @@
+.small-img {
+  width: 800px;   
+  height: auto;   
+  display: block;
+  margin: 0 auto;
+}
+
+h1, h5 {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.body, p{
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+/* Remove default spacing */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar container */
+/* Navbar container */
+.navbar {
+  background-color: purple; /* light gray */
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* List styling */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Links */
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Prevent content from hiding behind navbar */
+main {
+  margin-top: 60px;
+}

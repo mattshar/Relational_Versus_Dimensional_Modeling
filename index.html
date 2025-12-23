@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Blog</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+    <header>
+        <h1> Thanks for stumbling across my article!</h1>
+    </header>
+
+    <main>
+        <p class = "body">My name is Matthew. I like to write code for various tasks, and teach others that I know along the way. In my free time, I enjoy taking my two year old Australian Shepherd for walks, lift weights with my friends, grab coffee, and meet new people along the way! </p>
+        <p class = "body"> Granted that I am a tech nerd, I wanted to write this article to talk about the difference between relational data modeling and dimensional data modeling, two common approaches to designing storage structures in modern environments. This blog is not meant to provide you every single detail about each type of data modeling, but rather the purpose is to highlight the differences between each, benefits and tradeoffs, environments that they work the best in, and applications of both</p>
+        <img src="codingPhoto.jpg" alt="Difference between Relational and Dimensional Modeling" class = "small-img"/>
+        <h2> Relational Data Modeling versus Dimensional Data Modeling</h2>
+        <p> Now, this blog is meant for anyone to be able to follow along, but if you have taken a database management systems course or have a background with them, that will certainly help!</p>
+        <p> Let us define a few common terms that you will encounter throughout the first part of this read:</p>
+    <ul>
+  <li> <strong>Database</strong> - An organized collection of structured information, allowing for easy retrieval and management.</li>
+  <li> <strong>Table</strong> - An entity of interest that we have, these make up our database <i>(conceptually)</i>, usually holding columns that are split up into rows</li>
+  <li> <strong>Fields</strong> - These are the attributes that make up our tables. They are often used interchangeably with columns in a table. </li>
+  <li> <strong>Primary Key</strong> - A unique identifier for each row within a table. These are usually integers or gloablly unique identifiers (GUID)</li>
+  <li> <strong>Foreign Key</strong> - This is a column within a table that references another table's primary key. You can think of this as a way for two tables or entities to communicate with one another.</li>
+  <li> <strong>OLTP</strong> - Online Transaction Processing, a type of environment designed for handling day-to-day transactional data. This is the type of environment that we will begin duscussing.</li>
+  <li> <strong>Joins</strong> - The process of writing a query (request for information) that connects information from two or more tables.
+</ul>
+<p> These terms should suffice for getting us started, as other important terms arise I will provide definitions for them.</p>
+<h1> Relational Data Modeling</h1>
+<h2> Rules and Applications </h2>
+<p> OLTP environments are where relational data modeling is emphasized. Our primary goal in these environments is to reduce and eliminate anomalies, specifically insertion, update, and deletion anomalies.</p>
+<p> Think about how many transactions are recorded daily by your favorite online shopping platform or grocery store, millions right? The intended goals of such <strong>database</strong> design are to reduce data redundancy, and maintain data integrity. Without such a design, a database would be <i>unlikely</i> to scale well within a production environment. These databases should follow the rule of database normalization, but that is beyond the scope of what we will cover in this article.</p>
+<p> Each <strong>foreign key</strong> must map to a corresponding <i>valid</i> <strong>primary key</strong> within another table. For example, a customer table may store a column that serves as a <strong>foreign key</strong> to our accounts table, indicating that there is a relationship between our customer and an existing account that they have for our company. But if we see that a customer maps to account number 55, but then we look for account whose primary key is 55 in our accounts table and it doesn't exist, that is a violation of referential integrity.</p>
+<p> Generally speaking, we expect an increased number of tables to exist within our design, as we want a clean and neat structure that separates our entities. For example, many <strong>database</strong> designers would separate an address table into many different tables, including zip code, city, state, etc.</p>
+<h2> Tradeoffs and Disadvantages </h2>
+<p> So if the benefits are improved data integrity, maintainability, and scalability, what are the drawbacks of this type of data modeling? </p>
+<p> As we mentioned that there is usually an increased number of entities within a relational model, leading to <i> increased </i> storage costs and difficult queries ran by analysts and developers. Although storage is much cheaper nowadays than it used to be, adding hundreds, potentially thousands of tables can lead to the degradation of performance.</p>
+<p> Having to write complex queries that contain upwards of 30 <strong>joins</strong> is certainly not ideal when a data analyst needs to compile reports regarding the comparison of company sales from quarter to quarter. Not to mention, relational models usually store granular data, often times, general reports usually do not require such detailed information.</p>
+<p> Nevertheless, if our <strong>database</strong> has concurrency (simultaneous users) along with multiple <strong>joins</strong>, relational models may not perform as well as dimensional models due to the complexity of joins required for analysis. However, this is exactly why an <strong>OLAP</strong> environment exists and is a great time for me to introduce you to the world of dimensional modeling.</p>
+<h1> Dimensional Data Modeling </h1>
+<p> I'm sure at one point or another you have requested a report or piece of information such as how many of our products were returned last month, or which products sell the most together, during which day of the week, etc.</p>
+</main>
+
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+
+</body>
+</html>
