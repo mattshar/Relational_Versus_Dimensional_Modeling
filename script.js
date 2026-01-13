@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            
+
         });
     });
 
@@ -24,4 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('highlight-term');
         });
     });
+
+    
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry =>  {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+
+document.querySelectorAll('.topic, .glossary-box, .intro-card').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+
 });
