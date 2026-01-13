@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew's Data Blog</title>
+    <link rel="icon" type="image/png" href="favIcon.jpg">
     <link rel="stylesheet" href="styles.css">
     
     <!-- BOOTSTRAP -->
@@ -59,17 +60,54 @@
             
 
             <section class="topic">
-                <h1>Relational Data Modeling</h1>
-                <h3>Rules and Applications</h3>
-                <p>Relational modeling shines in <strong>OLTP</strong> environments. The goal is to reduce <strong>data redundancy</strong> and maintain <strong>data integrity</strong> through normalization.</p>
+    <h1>Relational Data Modeling</h1>
 
-                <blockquote>
-                    Without proper design, a database is unlikely to scale well within a production environment.
-                </blockquote>
+    <h3>Rules and Applications</h3>
+    <p>
+        Relational data modeling is the backbone of most <strong>OLTP</strong> systems.
+        These systems are designed to handle a large number of short, atomic transactions
+        such as inserts, updates, and deletes. Examples include e-commerce platforms,
+        banking systems, and operational business applications.
+    </p>
 
-                <h3>Tradeoffs and Disadvantages</h3>
-                <p>High normalization leads to an increased number of tables. While this protects integrity, it can make queries complex—sometimes requiring 30+ joins—which can degrade performance for analysts.</p>
-            </section>
+    <p>
+        The primary goal of an OLTP database is to ensure <strong>accuracy, consistency,
+        and reliability</strong> of data. To achieve this, relational models follow
+        strict normalization rules that minimize redundancy and enforce relationships
+        through primary and foreign keys.
+    </p>
+
+    <blockquote>
+        In OLTP systems, correctness is more important than query speed for large scans.
+    </blockquote>
+
+    <h3>Benefits of OLTP & Relational Modeling</h3>
+    <ul>
+        <li><strong>High data integrity:</strong> Normalization ensures a single source of truth.</li>
+        <li><strong>Efficient writes:</strong> Optimized for frequent inserts and updates.</li>
+        <li><strong>Strong consistency:</strong> ACID properties protect transactional reliability.</li>
+        <li><strong>Scalability for operations:</strong> Handles thousands of concurrent users.</li>
+    </ul>
+
+    <h3>Tradeoffs and Disadvantages</h3>
+    <p>
+        While normalization protects data integrity, it introduces complexity when querying
+        large datasets. Analytical questions often require joining many tables together,
+        which can become expensive as data volume grows.
+    </p>
+
+    <p>
+        As a result, OLTP databases are not well suited for historical analysis, reporting,
+        or aggregations across long time ranges.
+    </p>
+
+    <ul>
+        <li><strong>Complex queries:</strong> Reporting may require 10–30+ joins.</li>
+        <li><strong>Slower analytics:</strong> Large scans and aggregations perform poorly.</li>
+        <li><strong>Not analyst-friendly:</strong> Schema complexity increases cognitive load.</li>
+    </ul>
+</section>
+
 
             <section class="topic">
     <h1>Dimensional Data Modeling</h1>
@@ -95,8 +133,85 @@
                 <strong>Snowflake Schema:</strong> A more normalized version of the star schema,
                 but still surrounds the fact table with its respective dimensions.
             </li>
+
+            <li>
+        <strong>Fact Tables:</strong>
+        Fact tables store quantitative measurements—such as sales amount, quantity sold,
+        or revenue—at a clearly defined level of detail known as the <em>grain</em>.
+        These tables typically contain foreign keys that link to related dimension tables.
+    </li>
+    <li>
+        <strong>Dimension Tables: </strong>
+        Dimension tables provide descriptive context for facts. They contain attributes
+        like product name, customer region, or date, which allow analysts to filter,
+        group, and drill into metrics.
+    </li>
+    <li>
+        <strong>Grain:</strong>
+        The grain defines what a single row in the fact table represents—for example,
+        one row per product sold per day. Establishing the grain early is critical,
+        as it determines how the data can be analyzed.
+    </li>
         </ul>
     </div>
+
+    <h3>Core Components of a Dimensional Model</h3>
+<p>
+    At its core, dimensional modeling organizes data in a way that mirrors how
+    business users think about their data. Rather than optimizing for transactions,
+    it optimizes for readability, performance, and analytical flexibility.
+</p>
+
+
+<h3>Benefits of Dimensional Modeling</h3>
+<p>
+    Dimensional models are intentionally denormalized to reduce query complexity
+    and improve performance for analytical workloads. Generally, we are willing make the sacrifice of having more data redundancy, for the benefit of having fewer tables in this type of environment.
+</p>
+
+<ul>
+    <li>
+        <strong>Fast query performance:</strong> Fewer joins and optimized schemas
+        allow databases to scan and aggregate large datasets efficiently.
+    </li>
+    <li>
+        <strong>Simple and intuitive design:</strong> Analysts can easily understand
+        how facts relate to dimensions, reducing onboarding time.
+    </li>
+    <li>
+        <strong>Business-friendly analytics:</strong> Supports slicing, dicing,
+        filtering, and trending across time and other dimensions.
+    </li>
+</ul>
+
+<h3>Tradeoffs and Limitations</h3>
+<p>
+    While dimensional modeling excels in analytical scenarios, it comes with
+    tradeoffs that make it unsuitable for transactional workloads.
+</p>
+
+<ul>
+    <li>
+        <strong>Data redundancy:</strong> Denormalization leads to repeated values
+        across dimension tables, increasing storage requirements.
+    </li>
+    <li>
+        <strong>ETL complexity:</strong> Data must be carefully transformed and loaded
+        to ensure consistency across facts and dimensions.
+    </li>
+    <li>
+        <strong>Not ideal for OLTP:</strong> Frequent updates and deletes can be
+        expensive and are better handled by normalized relational systems.
+    </li>
+</ul>
+
+<blockquote>
+    Dimensional modeling trades strict normalization for analytical speed,
+    clarity, and usability.
+</blockquote>
+
+<h1> Final Thoughts </h1>
+<p> While I hope you have learned a bit about both the OLTP and OLAP environments, I encourage you to continue learning about the differences between OLTP and OLAP and how they serve vastly different and important mechanisms of data and analytics! </p>
 </section>
 
         </article>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Smooth Scrolling
+    
     const navLinks = document.querySelectorAll('.navbar a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Smoother Scrolling,,
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Interactive Definition Highlighter
+    // Interactive Definition 
     const listItems = document.querySelectorAll('main ul li');
     listItems.forEach(item => {
         item.style.cursor = 'pointer';

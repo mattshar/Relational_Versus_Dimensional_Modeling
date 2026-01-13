@@ -128,7 +128,7 @@ blockquote {
 /* Image (only have one currently) */
 .image-wrapper {
     text-align: center;
-    margin: 40px 0;
+    margin: 20px -10;
 }
 
 .featured-img {
