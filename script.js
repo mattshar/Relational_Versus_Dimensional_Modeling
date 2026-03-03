@@ -51,7 +51,7 @@ document.querySelectorAll('.topic, .glossary-box, .intro-card').forEach(el => {
 
 // JQuery addition below  on top of vanilla JS 
 
-
+  
 $(document).ready(function() {
     // Progress Bar Logic
     $(window).on('scroll', function() {

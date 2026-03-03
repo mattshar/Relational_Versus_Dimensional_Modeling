@@ -89,7 +89,41 @@
         <li><strong>Strong consistency:</strong> ACID properties protect transactional reliability.</li>
         <li><strong>Scalability for operations:</strong> Handles thousands of concurrent users.</li>
     </ul>
+<section class="normalization-skeleton">
+    <h3>The Normalization Process</h3>
+    <p>To achieve these benefits, OLTP systems follow specific "Normal Forms" to organize data efficiently:</p>
 
+    <div class="n-form-step">
+        <h4>1. First Normal Form (1NF)</h4>
+        <p><strong>The Goal:</strong> [To ensure data atomicity, uniqueness, and eliminate any repeating groups. Atomcity indicates that each field in a table contains one single, indivisible value. Thinking of this as an Excel sheet, we only allow one value in each cell.]</p>
+        <div class="example-placeholder">
+            </div>
+    </div>
+
+    <hr>
+
+    <div class="n-form-step">
+        <h4>2. Second Normal Form (2NF)</h4>
+        <p><strong>The Goal:</strong> [To ensure that we have eliminated all partial dependencies in our tables. This problem arises when we have a composite key in a table (e.g. OrderID, ProductID), all other attributes in our table must "depend" on both, OrderID and ProductID]</p>
+        <div class="example-placeholder">
+            </div>
+    </div>
+
+    <hr>
+
+    <div class="n-form-step">
+        <h4>3. Third Normal Form (3NF)</h4>
+        <p><strong>The Goal:</strong> [To eliminate all transitive dependencies from our tables. This indicates that all of our non-primary key attributes depend only on our primary or composite key, and not upon other non-key attributes.]</p>
+        <div class="example-placeholder">
+            </div>
+    </div>
+
+    <blockquote>
+        "The Key, the Whole Key, and Nothing but the Key!"
+    </blockquote>
+</section>
+
+    
     <h3>Tradeoffs and Disadvantages</h3>
     <p>
         While normalization protects data integrity, it introduces complexity when querying
