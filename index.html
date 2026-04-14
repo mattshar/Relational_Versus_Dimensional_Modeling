@@ -16,6 +16,13 @@
 </head>
 <body>
 
+
+    <div class="progress-container">
+        
+    <div class="progress-bar" id="myBar"></div>
+</div>
+
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">DataModeling<span>Blog</span></a>
@@ -244,6 +251,47 @@
     Dimensional modeling trades strict normalization for analytical speed,
     clarity, and usability.
 </blockquote>
+
+
+<section class="topic comparison-summary">
+    <h2>The Verdict: Which to Use?</h2>
+    <p>In short: <strong>Relational Design</strong> is for running the business; <strong>Dimensional Design</strong> is for understanding the business.</p>
+    
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Relational (OLTP)</th>
+                    <th>Dimensional (OLAP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Goal</strong></td>
+                    <td>Efficient Writing</td>
+                    <td>Fast Reading</td>
+                </tr>
+                <tr>
+                    <td><strong>Schema</strong></td>
+                    <td>Normalized (Many Tables)</td>
+
+                    <td>Denormalized (Star/Snowflake) </td>
+                </tr>
+                <tr>
+                    <td><strong>Use Case</strong></td>
+                    <td>Real-time Transactions</td>
+
+                    <td>Historical Analysis</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="glossary-box pro-tip">
+        <strong>  Pro Tip:</strong> Many companies use <strong>ETL</strong> to move data from Relational systems into Dimensional Warehouses for reporting.
+    </div>
+</section>
 
 <h1> Final Thoughts </h1>
 <p> Both modeling types have their benefits and environments where they shine, and both are pivotal to many organizations in the current state of technology! </p>
