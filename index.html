@@ -39,6 +39,24 @@
         <p class="subtitle">Breaking down storage structures in modern data environments, in a simple and easy to understand manner! </p>
     </header>
 
+
+    <section id="about" class="intro-card">
+    <div class="bio">
+        <img src="Myself.png" alt="Matthew" class="profile-circle">
+        <div class="info">
+            <span class="label">Introduction</span>
+            <h2 class="name">Matthew</h2>
+            
+            <p class="blurb">Passionate about technology with a special interest in software architecture and data modeling.</p>
+        </div>
+    </div> 
+    
+    <div class="divider-line"></div>
+
+    <p> Cincinnati Metropolitan Area</p>
+</section>
+
+
     <main class="container">
         <section id="about" class="intro-card">
             <h2>Hi, I'm Matthew 👋</h2>
@@ -102,7 +120,7 @@
 
     <div class="n-form-step">
         <h4>1. First Normal Form (1NF)</h4>
-        <p><strong>The Goal:</strong> [To ensure data atomicity, uniqueness, and eliminate any repeating groups. Atomcity indicates that each field in a table contains one single, indivisible value. Thinking of this as an Excel sheet, we only allow one value in each cell.]</p>
+        <p><strong>Primary Goal:</strong> To ensure data atomicity, uniqueness, and eliminate any repeating groups. Atomcity indicates that each field in a table contains one single, indivisible value. Thinking of this as an Excel sheet, we only allow one value in each cell.</p>
         <div class="example-placeholder">
             </div>
     </div>
@@ -111,7 +129,8 @@
 
     <div class="n-form-step">
         <h4>2. Second Normal Form (2NF)</h4>
-        <p><strong>The Goal:</strong> [To ensure that we have eliminated all partial dependencies in our tables. This problem arises when we have a composite key in a table (e.g. OrderID, ProductID), all other attributes in our table must "depend" on both, OrderID and ProductID]</p>
+        <p><strong>Primary Goal:</strong> 
+            To ensure that we have eliminated all partial dependencies in our tables. This problem arises when we have a composite key in a table (e.g. OrderID, ProductID), all other attributes in our table must "depend" on both, OrderID and ProductID</p>
         <div class="example-placeholder">
             </div>
     </div>
@@ -120,7 +139,7 @@
 
     <div class="n-form-step">
         <h4>3. Third Normal Form (3NF)</h4>
-        <p><strong>The Goal:</strong> [To eliminate all transitive dependencies from our tables. This indicates that all of our non-primary key attributes depend only on our primary or composite key, and not upon other non-key attributes.]</p>
+        <p><strong>Primary Goal:</strong> To eliminate all transitive dependencies from our tables. This indicates that all of our non-primary key attributes depend only on our primary or composite key, and not upon other non-key attributes.</p>
         <div class="example-placeholder">
             </div>
     </div>
