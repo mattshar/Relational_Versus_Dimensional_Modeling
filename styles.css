@@ -243,5 +243,5 @@ footer {
 
 
 .meta-date {
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
