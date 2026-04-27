@@ -243,5 +243,6 @@ footer {
 
 
 .meta-date {
-    white-space: nowrap !important;
+    white-space: nowrap;
+    font-size: 13px;
 }
