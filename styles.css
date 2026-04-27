@@ -238,3 +238,10 @@ footer {
     background-color: #007bff;
     margin: 10px 0 30px 0;
 }
+
+
+
+
+.meta-date {
+    white-space: nowrap;
+}
