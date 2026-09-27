@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Enterprise Data Modeling</title>
+
     <link rel="icon" type="image/png" href="favIcon.jpg">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    
+
     <!-- BOOTSTRAP -->
     <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-  rel="stylesheet"
->
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- TAILWIND -->
+    <script>
+        tailwind = {
+            config: {
+                corePlugins: {
+                    preflight: false
+                }
+            }
+        };
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
@@ -39,7 +53,7 @@
         <p class="subtitle">Breaking down storage structures in modern data environments, in a simple and easy to understand manner! </p>
     </header>
 
-
+                            <!-- its been a minute :) -->
     <section id="about" class="intro-card">
     <div class="bio">
         <img src="Myself.png" alt="Matthew" class="profile-circle">
@@ -47,7 +61,7 @@
             <span class="label">Author</span>
             <h2 class="name">Matthew</h2>
             <div class="author-meta">
-                <span class="meta-date">Last Updated: Apr 27, 2026</span>
+                <span class="meta-date">Last Updated: Sep 27, 2026</span>
                 
             </div>
             <p class="blurb">Passionate about technology with a special interest in software architecture and data modeling.</p>
@@ -290,18 +304,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Goal</strong></td>
-                    <td>Efficient Writing</td>
+                    <td><strong style="color: black">Goal</strong></td>
+                    <td >Efficient Writing</td>
                     <td>Fast Reading</td>
                 </tr>
                 <tr>
-                    <td><strong>Schema</strong></td>
+                    <td><strong style="color: black">Schema</strong></td>
                     <td>Normalized (Many Tables)</td>
 
                     <td>Denormalized (Star/Snowflake) </td>
                 </tr>
                 <tr>
-                    <td><strong>Use Case</strong></td>
+                    <td><strong style="color: black">Use Case</strong></td>
                     <td>Real-time Transactions</td>
 
                     <td>Historical Analysis</td>
